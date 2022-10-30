@@ -189,7 +189,7 @@ am__libxfig_a_SOURCES_DIST = d_arcbox.c \
 	f_readpng.c f_wrpng.c f_readtif.c f_readxpm.c splash.xpm \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
-	SmeBSB.c SmeBSBP.h
+	SmeBSB.c SmeBSBP.h e_depthctrl.c e_depthctrl.h
 @HAVE_JPEG_TRUE@am__objects_1 = f_readjpg.$(OBJEXT)
 @HAVE_PNG_TRUE@am__objects_2 = f_readpng.$(OBJEXT) f_wrpng.$(OBJEXT)
 @HAVE_TIFF_TRUE@am__objects_3 = f_readtif.$(OBJEXT)
@@ -210,7 +210,7 @@ am__objects_8 =  d_arcbox.$(OBJEXT) \
 	d_arc.$(OBJEXT) d_box.$(OBJEXT) d_ellipse.$(OBJEXT) \
 	d_line.$(OBJEXT) d_picobj.$(OBJEXT) d_regpoly.$(OBJEXT) \
 	d_spline.$(OBJEXT) d_subspline.$(OBJEXT) d_text.$(OBJEXT) \
-	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) \
+	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) e_depthctrl.$(OBJEXT)\
 	e_break.$(OBJEXT) e_chop.$(OBJEXT) e_compound.$(OBJEXT) \
 	e_convert.$(OBJEXT) e_copy.$(OBJEXT) e_delete.$(OBJEXT) \
 	e_deletept.$(OBJEXT) e_edit.$(OBJEXT) e_flip.$(OBJEXT) \
@@ -259,7 +259,7 @@ am__xfig_SOURCES_DIST =  d_arcbox.c \
 	d_regpoly.c d_regpoly.h d_spline.c d_spline.h d_subspline.c \
 	d_subspline.h d_text.c d_text.h dirstruct.h e_addpt.c \
 	e_addpt.h e_align.c e_align.h e_arrow.c e_arrow.h e_break.c \
-	e_break.h e_chop.c e_chop.h e_compound.c e_compound.h \
+	e_break.h e_depthctrl.c e_depthctrl.h e_chop.c e_chop.h e_compound.c e_compound.h \
 	e_convert.c e_convert.h e_copy.c e_copy.h e_delete.c \
 	e_delete.h e_deletept.c e_deletept.h e_edit.c e_edit.h \
 	e_flip.c e_flip.h e_glue.c e_glue.h e_joinsplit.c \
@@ -305,11 +305,11 @@ am__xfig_SOURCES_DIST =  d_arcbox.c \
 #----------------------------------- Code Starts Here ----------------------------------
 # GOAL: Add the e_depthctrl OBJECXT in am_xfig_OBJECTS(don't include the file extension name)
 
-am_xfig_OBJECTS = d_arcbox.$(OBJEXT) \
+am_xfig_OBJECTS = d_arcbox.$(OBJEXT) \ 
 	d_arc.$(OBJEXT) d_box.$(OBJEXT) d_ellipse.$(OBJEXT) \
 	d_line.$(OBJEXT) d_picobj.$(OBJEXT) d_regpoly.$(OBJEXT) \
 	d_spline.$(OBJEXT) d_subspline.$(OBJEXT) d_text.$(OBJEXT) \
-	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) \
+	e_depthctrl.$(OBJEXT) e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) \
 	e_break.$(OBJEXT) e_chop.$(OBJEXT) e_compound.$(OBJEXT) \
 	e_convert.$(OBJEXT) e_copy.$(OBJEXT) e_delete.$(OBJEXT) \
 	e_deletept.$(OBJEXT) e_edit.$(OBJEXT) e_flip.$(OBJEXT) \
@@ -610,7 +610,7 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h \
 	d_regpoly.h d_spline.c d_spline.h d_subspline.c d_subspline.h \
 	d_text.c d_text.h dirstruct.h e_addpt.c e_addpt.h e_align.c \
 	e_align.h e_arrow.c e_arrow.h e_break.c e_break.h e_chop.c \
-	e_chop.h e_compound.c e_compound.h e_convert.c e_convert.h \
+	e_chop.h e_depthctrl.c e_depthctrl.h e_compound.c e_compound.h e_convert.c e_convert.h \
 	e_copy.c e_copy.h e_delete.c e_delete.h e_deletept.c \
 	e_deletept.h e_edit.c e_edit.h e_flip.c e_flip.h e_glue.c \
 	e_glue.h e_joinsplit.c e_joinsplit.h e_measure.c e_measure.h \
