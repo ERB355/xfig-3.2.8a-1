@@ -309,7 +309,9 @@ mode_sw_info mode_switches[] = {
 	 * 		3. Add the function that was in the depthctrl header file.
 	 * 		4. State that it affects all objects.
 	 * 		5. Add the ind mask that you created.										   */
-
+	{&depthctrl_ic, F_DEPTHCTRL, stub_depth_control_selected, M_ALL, I_DEPTHCTRL,
+		"depthctrl   (Ctrl-f)",
+		False, NULL, (Pixmap)0, (Pixmap)0},
     //----------------------------------- Code ends Here ------------------------------------
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
