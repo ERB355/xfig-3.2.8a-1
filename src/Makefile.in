@@ -189,7 +189,7 @@ am__libxfig_a_SOURCES_DIST = d_arcbox.c \
 	f_readpng.c f_wrpng.c f_readtif.c f_readxpm.c splash.xpm \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
-	SmeBSB.c SmeBSBP.h
+	SmeBSB.c SmeBSBP.h e_depthctrl.c e_depthctrl.h
 @HAVE_JPEG_TRUE@am__objects_1 = f_readjpg.$(OBJEXT)
 @HAVE_PNG_TRUE@am__objects_2 = f_readpng.$(OBJEXT) f_wrpng.$(OBJEXT)
 @HAVE_TIFF_TRUE@am__objects_3 = f_readtif.$(OBJEXT)
@@ -210,7 +210,7 @@ am__objects_8 =  d_arcbox.$(OBJEXT) \
 	d_arc.$(OBJEXT) d_box.$(OBJEXT) d_ellipse.$(OBJEXT) \
 	d_line.$(OBJEXT) d_picobj.$(OBJEXT) d_regpoly.$(OBJEXT) \
 	d_spline.$(OBJEXT) d_subspline.$(OBJEXT) d_text.$(OBJEXT) \
-	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) \
+	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) e_depthctrl.$(OBJEXT)\
 	e_break.$(OBJEXT) e_chop.$(OBJEXT) e_compound.$(OBJEXT) \
 	e_convert.$(OBJEXT) e_copy.$(OBJEXT) e_delete.$(OBJEXT) \
 	e_deletept.$(OBJEXT) e_edit.$(OBJEXT) e_flip.$(OBJEXT) \
@@ -297,7 +297,7 @@ am__xfig_SOURCES_DIST =  d_arcbox.c \
 	f_readpng.c f_wrpng.c f_readtif.c f_readxpm.c splash.xpm \
 	w_i18n.c w_i18n.h w_menuentry.c w_menuentry.h w_menuentryP.h \
 	SmeBSB.h SmeCascade.c SmeCascade.h SmeCascadeP.h SimpleMenu.c \
-	SmeBSB.c SmeBSBP.h
+	SmeBSB.c SmeBSBP.h e_depthctrl.c e_depthctrl.h
 
 #----------------------------------- Code ends Here ------------------------------------
 
@@ -309,7 +309,7 @@ am_xfig_OBJECTS = d_arcbox.$(OBJEXT) \
 	d_arc.$(OBJEXT) d_box.$(OBJEXT) d_ellipse.$(OBJEXT) \
 	d_line.$(OBJEXT) d_picobj.$(OBJEXT) d_regpoly.$(OBJEXT) \
 	d_spline.$(OBJEXT) d_subspline.$(OBJEXT) d_text.$(OBJEXT) \
-	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) \
+	e_addpt.$(OBJEXT) e_align.$(OBJEXT) e_arrow.$(OBJEXT) e_depthctrl.$(OBJEXT)\
 	e_break.$(OBJEXT) e_chop.$(OBJEXT) e_compound.$(OBJEXT) \
 	e_convert.$(OBJEXT) e_copy.$(OBJEXT) e_delete.$(OBJEXT) \
 	e_deletept.$(OBJEXT) e_edit.$(OBJEXT) e_flip.$(OBJEXT) \
@@ -644,7 +644,7 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h \
 	w_rottext.h w_rulers.c w_rulers.h w_setup.c w_setup.h w_snap.c \
 	w_snap.h w_srchrepl.c w_srchrepl.h w_style.c w_style.h \
 	w_util.c w_util.h w_zoom.c w_zoom.h splash.xbm version.xbm \
-	xfig_math.h $(am__append_1) $(am__append_2) $(am__append_3) \
+	xfig_math.h e_depthctrl.c e_depthctrl.h $(am__append_1) $(am__append_2) $(am__append_3) \
 	$(am__append_4) $(am__append_5) $(am__append_6) \
 	$(am__append_7)
 EXTRA_DIST = u_draw_spline.c

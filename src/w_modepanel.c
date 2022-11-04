@@ -52,7 +52,7 @@
 // #taskSendBack_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Import the depthctrl header file.
-
+#include "e_depthctrl.h"
 //----------------------------------- Code ends Here ------------------------------------
 
 #include "e_edit.h"
@@ -129,7 +129,7 @@ static void	stub_tangent_selected(void);
 // #taskSendBack_Icon
 //----------------------------------- Code ends Here ------------------------------------
 // GOAL: Declare a stub function called "depth_control_selected". Pass in and return void.
-
+static void stub_depth_control_selected(void);
 //----------------------------------- Code ends Here ------------------------------------
 
 /**************	    local variables and routines   **************/
@@ -295,6 +295,9 @@ mode_sw_info mode_switches[] = {
 		False, NULL, (Pixmap)0, (Pixmap)0},
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
+		False, NULL, (Pixmap)0, (Pixmap)0},
+	{&depthctrl_ic, F_DEPTHCTRL, depth_control_selected, M_ALL, I_DEPTHCTRL,
+		"depth control   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
 
 	// #taskSendBack_Icon
@@ -1017,7 +1020,11 @@ stub_areameas_selected(void)
 //----------------------------------- Code Starts Here ----------------------------------
 /* GOAL: Create the depth_control_selected function and change the mode of the depthctrl 
      icon structure.                                                                   */
-	 
+static void
+stub_depth_control_selected(void)
+{
+	change_mode(&depthctrl_ic);
+}	 
 //----------------------------------- Code ends Here ------------------------------------
 
 
