@@ -1258,8 +1258,7 @@ static unsigned char depthctrl_bits_big[] = {
    0x10, 0x00, 0x00, 0x68, 0x00, 0x10, 0x38, 0x91, 0x99, 0x00, 0x10, 0x40,
    0x51, 0x0a, 0x00, 0x10, 0x78, 0xd1, 0x09, 0x00, 0x10, 0x44, 0x5e, 0x08,
    0x00, 0xf0, 0x79, 0x90, 0x0b, 0x00, 0x00, 0x00, 0x0f, 0x00, 0x00, 0x00,
-   0x00, 0x00, 0x00, 0x00  
-};
+   0x00, 0x00, 0x00, 0x00};
 
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -2291,7 +2290,8 @@ void populate_icons_big()
 	icon_struct	anglemeas_ic_ = { anglemeas_width_big, anglemeas_height_big, (char*)anglemeas_bits_big };
 	icon_struct	lenmeas_ic_ = { lenmeas_width_big, lenmeas_height_big, (char*)lenmeas_bits_big };
 	icon_struct	areameas_ic_ = { areameas_width_big, areameas_height_big, (char*)areameas_bits_big };
-	icon_struct depthctrl_ic_ = {depthctrl_width_big, depthctrl_height_big, (char*)depthctrl_bits_big}
+	icon_struct depthctrl_ic_ = {depthctrl_width_big, depthctrl_height_big, (char*)depthctrl_bits_big};
+	
 	regpoly_ic = regpoly_ic_;
 	addpt_ic = addpt_ic_;
 	align_ic = align_ic_;
