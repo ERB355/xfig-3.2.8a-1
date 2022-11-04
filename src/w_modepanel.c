@@ -296,9 +296,7 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
-	{&depthctrl_ic, F_DEPTHCTRL, depth_control_selected, M_ALL, I_DEPTHCTRL,
-		"depth control   (Ctrl-m)",
-		False, NULL, (Pixmap)0, (Pixmap)0},
+
 
 	// #taskSendBack_Icon
 	//----------------------------------- Code Starts Here ----------------------------------
@@ -309,7 +307,7 @@ mode_sw_info mode_switches[] = {
 	 * 		3. Add the function that was in the depthctrl header file.
 	 * 		4. State that it affects all objects.
 	 * 		5. Add the ind mask that you created.										   */
-	{&depthctrl_ic, F_DEPTHCTRL, stub_depth_control_selected, M_ALL, I_DEPTHCTRL,
+	{&depthctrl_ic, F_DEPTHCTRL, depthctrl_selected, M_ALL, I_DEPTHCTRL,
 		"depthctrl   (Ctrl-f)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
     //----------------------------------- Code ends Here ------------------------------------
