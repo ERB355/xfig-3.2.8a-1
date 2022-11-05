@@ -160,7 +160,7 @@ conftest.c:20:6: warning: conflicting types for built-in function 'pow'; expecte
       |      ^~~
 conftest.c:1:1: note: 'pow' is declared in header '<math.h>'
     1 | /* confdefs.h */
-/bin/ld: /tmp/cc9Y21ZB.o: in function `main':
+/bin/ld: /tmp/cceoGCot.o: in function `main':
 /home/ubuntu/Desktop/VCU-ERB/xfig-3.2.8a/conftest.c:24: undefined reference to `pow'
 collect2: error: ld returned 1 exit status
 configure:4587: $? = 1
@@ -1066,7 +1066,7 @@ configure:6388: $? = 0
 configure:6388: result: yes
 configure:6504: checking for library containing XpmFree
 configure:6535: gcc -o conftest -g -O2   conftest.c -lm  >&5
-/bin/ld: /tmp/cc0h6vP8.o: in function `main':
+/bin/ld: /tmp/ccCIGpdi.o: in function `main':
 /home/ubuntu/Desktop/VCU-ERB/xfig-3.2.8a/conftest.c:59: undefined reference to `XpmFree'
 collect2: error: ld returned 1 exit status
 configure:6535: $? = 1
