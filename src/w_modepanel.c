@@ -297,6 +297,7 @@ mode_sw_info mode_switches[] = {
 		"Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
 
+
 	// #taskSendBack_Icon
 	//----------------------------------- Code Starts Here ----------------------------------
 	/* GOAL: Describe the shortcutt in the left panel. 
@@ -307,7 +308,7 @@ mode_sw_info mode_switches[] = {
 	 * 		4. State that it affects all objects.
 	 * 		5. Add the ind mask that you created.										   */
 	{&depthctrl_ic, F_DEPTHCTRL, depthctrl_selected, M_ALL, I_DEPTHCTRL,
-		"DEPTH CONTROL   (Ctrl-m)",
+		"depthctrl   (Ctrl-f)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
     //----------------------------------- Code ends Here ------------------------------------
 

@@ -113,7 +113,7 @@ extern Dimension UPD_CTRL_WD;		/* actual width is det. in setup_ind_panel */
 //#taskSendBack_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Create an indmask named DEPTHCTRL with "I_DEPTH" as the point position.
-#define I_DEPTHCTRL  (I_DEPTH)
+#define I_DEPTHCTRL       (I_DEPTH)
 //----------------------------------- Code ends Here ------------------------------------
 
 /* for checking which parts to update */

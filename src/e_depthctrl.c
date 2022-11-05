@@ -90,49 +90,49 @@ void bringtofront(F_line *p, int type)
 {
     if (type == O_COMPOUND) //for compound objects
     {
-        int maxc = find_largest_depth(p); 
-        int minc = find_smallest_depth(p);
-        int max = get_max_depth();      
+        int maxc = find_largest_depth(p); //largest depth in compound
+        int minc = find_smallest_depth(p);//smallest depth in compound
+        int min  = get_min_depth();       //smallest occupied depth
         int offset = 0;
-        if ((maxc - minc) < (999 - max)) 
+        if ((maxc - minc) < min)
         {
-            offset = (max - minc + 1);
+            offset = -1*(maxc - min + 1);
         }
-        else //edge case
+        else
         {
-            if (get_max_depth() == 999)
-            {
-                put_msg("Depth 999 already occupied, Compound object moved to have max depth of 999");
-            }
-                offset = 999 - maxc;
+            offset = -1*minc;
         }
-        F_compound* c_old = copy_compound(p);
+        F_compound *c_old = copy_compound(p);
         offset_compound_depth(p, offset);
         add_compound_depth(p);
         remove_compound_depth(c_old);
     }
-    else 
+    else //for single objects
     {
-        int old = p->depth;
-                if ((get_max_depth() < 999) & (p->depth != 999)) 
+        int old = p->depth; //remember old layer
+
+        if ((get_min_depth() > 0) & (p->depth != 0)) // normal case
         {
-            p->depth = get_max_depth() + 1;
+            p->depth = get_min_depth() - 1;
             add_depth(type, p->depth);
             remove_depth(type, old);
         }
-        else if ((get_max_depth() == 999) & (p->depth != 999)) 
+        else if ((get_min_depth() == 0) & (p->depth != 0)) // lower bound protection
         {
-            put_msg("Depth 999 ocupied, moving object anyway");
-            p->depth = 999;
+            put_msg("Depth 0 ocupied, moving object anyway");
+            p->depth = 0;
             add_depth(type, p->depth);
             remove_depth(type, old);
+
         }
-        else //faster for do nothing case
+        else //already in depth 0, do nothing
         {
-            put_msg("Object already in depth 999");
+            put_msg("Object already in depth 0");
         }
     }
     redisplay_object(p, type);
+}
+
 }
 //----------------------------------- Code ends Here ------------------------------------
 
@@ -173,46 +173,48 @@ void bringtofront(F_line *p, int type)
 
 void sendtoback(F_line* p, int type)
 {
-    if (type == O_COMPOUND) //for compound objects
+  if (type == O_COMPOUND) //for compound objects
     {
-        int maxc = find_largest_depth(p); //largest depth in compound
-        int minc = find_smallest_depth(p);//smallest depth in compound
-        int min  = get_min_depth();       //smallest occupied depth
+        int maxc = find_largest_depth(p); 
+        int minc = find_smallest_depth(p);
+        int max = get_max_depth();      
         int offset = 0;
-        if ((maxc - minc) < min)
+        if ((maxc - minc) < (999 - max)) 
         {
-            offset = -1*(maxc - min + 1);
+            offset = (max - minc + 1);
         }
-        else
+        else //edge case
         {
-            offset = -1*minc;
+            if (get_max_depth() == 999)
+            {
+                put_msg("Depth 999 already occupied, Compound object moved to have max depth of 999");
+            }
+                offset = 999 - maxc;
         }
-        F_compound *c_old = copy_compound(p);
+        F_compound* c_old = copy_compound(p);
         offset_compound_depth(p, offset);
         add_compound_depth(p);
         remove_compound_depth(c_old);
     }
-    else //for single objects
+    else 
     {
-        int old = p->depth; //remember old layer
-
-        if ((get_min_depth() > 0) & (p->depth != 0)) // normal case
+        int old = p->depth;
+                if ((get_max_depth() < 999) & (p->depth != 999)) 
         {
-            p->depth = get_min_depth() - 1;
+            p->depth = get_max_depth() + 1;
             add_depth(type, p->depth);
             remove_depth(type, old);
         }
-        else if ((get_min_depth() == 0) & (p->depth != 0)) // lower bound protection
+        else if ((get_max_depth() == 999) & (p->depth != 999)) 
         {
-            put_msg("Depth 0 ocupied, moving object anyway");
-            p->depth = 0;
+            put_msg("Depth 999 ocupied, moving object anyway");
+            p->depth = 999;
             add_depth(type, p->depth);
             remove_depth(type, old);
-
         }
-        else //already in depth 0, do nothing
+        else //faster for do nothing case
         {
-            put_msg("Object already in depth 0");
+            put_msg("Object already in depth 999");
         }
     }
     redisplay_object(p, type);
