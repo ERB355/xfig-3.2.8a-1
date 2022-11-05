@@ -133,7 +133,7 @@ void bringtofront(F_line *p, int type)
     redisplay_object(p, type);
 }
 
-}
+
 //----------------------------------- Code ends Here ------------------------------------
 
 
