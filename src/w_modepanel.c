@@ -308,7 +308,7 @@ mode_sw_info mode_switches[] = {
 	 * 		4. State that it affects all objects.
 	 * 		5. Add the ind mask that you created.										   */
 	{&depthctrl_ic, F_DEPTHCTRL, depthctrl_selected, M_ALL, I_DEPTHCTRL,
-		"depthctrl   (Ctrl-f)",
+		"depthctrl   (Ctrl-u)",
 		False, NULL, (Pixmap)0, (Pixmap)0},
     //----------------------------------- Code ends Here ------------------------------------
 
