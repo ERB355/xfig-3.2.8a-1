@@ -2230,7 +2230,7 @@ icon_struct	edit_ic;
 icon_struct	tangent_ic;
 icon_struct	anglemeas_ic;
 icon_struct	lenmeas_ic;
-//icon_struct	areameas_ic;
+icon_struct	areameas_ic;
 
 // #taskSendBack_Icon
 //----------------------------------- Code Starts Here ----------------------------------
