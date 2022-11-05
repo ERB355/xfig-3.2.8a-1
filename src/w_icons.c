@@ -2426,7 +2426,7 @@ void populate_icons_small()
 	lenmeas_ic = lenmeas_ic_;
 	areameas_ic = areameas_ic_;
 	depthctrl_ic=depthctrl_ic_;
-
+}
 //----------------------------------- Code ends Here ------------------------------------
 
 icon_struct	open_arc_ic = { open_arc_width, open_arc_height,
