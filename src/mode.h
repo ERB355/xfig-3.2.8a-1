@@ -92,7 +92,7 @@
 //#taskSendBack_icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Define a depthctrl mode with 63 for the mode number.
-
+#define     F_DEPTHCTRL    63
 //----------------------------------- Code ends Here ------------------------------------
 
 extern int	cur_mode;

@@ -47,7 +47,7 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	e_chop.h e_compound.c e_compound.h e_convert.c e_convert.h e_copy.c \
 	e_copy.h e_delete.c e_delete.h e_deletept.c e_deletept.h e_edit.c \
 	e_edit.h e_flip.c e_flip.h e_glue.c e_glue.h e_joinsplit.c \
-	e_joinsplit.h e_measure.c e_measure.h e_move.c e_move.h e_movept.c \
+	e_joinsplit.h e_measure.c e_measure.h e_depthctrl.c e_depthctrl.h e_move.c e_move.h e_movept.c \
 	e_movept.h e_placelib.c e_placelib.h e_rotate.c e_rotate.h e_scale.c \
 	e_scale.h e_tangent.c e_tangent.h e_update.c e_update.h fig.h figx.h \
 	f_load.c f_load.h f_neuclrtab.c f_neuclrtab.h f_picobj.c f_picobj.h \
