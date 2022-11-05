@@ -70,7 +70,7 @@ u_free.o: u_free.c /usr/include/stdc-predef.h ../config.h \
  /usr/include/x86_64-linux-gnu/bits/local_lim.h \
  /usr/include/linux/limits.h \
  /usr/include/x86_64-linux-gnu/bits/posix2_lim.h /usr/include/X11/xpm.h \
- paintop.h u_fonts.h u_free.h w_drawprim.h w_zoom.h xfig_math.h
+ paintop.h u_fonts.h u_free.h w_drawprim.h w_zoom.h xfig_math.h mode.h
 
 /usr/include/stdc-predef.h:
 
@@ -259,3 +259,5 @@ w_drawprim.h:
 w_zoom.h:
 
 xfig_math.h:
+
+mode.h:
