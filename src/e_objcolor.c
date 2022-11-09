@@ -44,8 +44,8 @@
 static void init_color_object(F_line *p, int type, int x, int y, int px, int py);
 static void init_color_border(F_line *p, int type, int x, int y, int px, int py);
 
-#define up_part(lv, rv, mask)    \
-    if (cur_updatemask & (mask)) \
+#define up_part(lv, rv, mask)    
+    if (cur_updatemask & (mask)) 
     (lv) = (rv)
 
 void color_line(F_line *line);
@@ -117,6 +117,97 @@ void objcolor_selected(void)
  *      The default case should just return the function.
  *
  *   3) Reset the cursor.                                                               */
+static void init_color_object(F_line *p, int type, int x, int y, int px, int py){
+switch(type){
+    case 1:
+    System.out.print("Break compound before coloring objects");
+    break;
+    case 2:
+    set_temp_cursor(wait_cursor);
+    L = *copy_line(F_line *p);
+    color_line(*L);
+    change_line(*p, *L);
+    redisplay_lines(*p,*L);
+    redisplay_line(*L);
+    System.out.print("The line has been updated");
+    break;
+    case 3:
+    set_temp_cursor(wait_cursor);
+    F_ellipse p2 = (F_ellipse) *p;
+    *E = *copy_ellipse(p2);
+    color_ellipse(*E);
+    change_ellipse(*p2, *E);
+    redisplay_ellipses(*p2, *E);
+    resdiplay_ellipse(*E);
+    System.out.print("The ellipse has been updated");
+    break;
+    case 4:
+    set_temp_cursor(wait_cursor);
+    F_arc p2 = (F_arc) *p;
+    *A = *copy_arc(p2);
+    color_arc(*A);
+    change_arc(*p2, *A);
+    redisplay_arcs(*p2, *A);
+    resdiplay_arc(*A);
+    System.out.print("The arc has been updated");
+    break; 
+    case 5:
+    set_temp_cursor(wait_cursor);
+    F_spline p2 = (F_spline) *p;
+    *S = *copy_spline(p2);
+    color_spline(*S);
+    change_spline(*p2, *S);
+    redisplay_splinees(*p2, *S);
+    resdiplay_spline(*S);
+    System.out.print("The spline has been updated");
+    break;
+}
+}
+static void init_color_border(F_line *p, int type, int x, int y, int px, int py){
+switch(type){
+    case 1:
+    System.out.print("Break compound before coloring objects");
+    break;
+    case 2:
+    set_temp_cursor(wait_cursor);
+    L = *copy_line(F_line *p);
+    color_line_border(*L);
+    change_line(*p, *L);
+    redisplay_lines(*p,*L);
+    redisplay_line(*L);
+    System.out.print("The line has been updated");
+    break;
+    case 3:
+    set_temp_cursor(wait_cursor);
+    F_ellipse p2 = (F_ellipse) *p;
+    *E = *copy_ellipse(p2);
+    color_ellipse_border(*E);
+    change_ellipse(*p2, *E);
+    redisplay_ellipses(*p2, *E);
+    resdiplay_ellipse(*E);
+    System.out.print("The ellipse has been updated");
+    break;
+    case 4:
+    set_temp_cursor(wait_cursor);
+    F_arc p2 = (F_arc) *p;
+    *A = *copy_arc(p2);
+    color_arc_border(*A);
+    change_arc(*p2, *A);
+    redisplay_arcs(*p2, *A);
+    resdiplay_arc(*A);
+    System.out.print("The arc has been updated");
+    break; 
+    case 5:
+    set_temp_cursor(wait_cursor);
+    F_spline p2 = (F_spline) *p;
+    *S = *copy_spline(p2);
+    color_spline_border(*S);
+    change_spline(*p2, *S);
+    redisplay_splinees(*p2, *S);
+    resdiplay_spline(*S);
+    System.out.print("The spline has been updated");
+    break;
+}
  
 /**
  * Now continue to create the header file for objcolor 
