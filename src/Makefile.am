@@ -40,7 +40,7 @@ bin_PROGRAMS = xfig
 # GOAL: Add the objcolor C source and header file to the xfig_sources field.
 
 #----------------------------------- Code ends Here ------------------------------------
-xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
+xfig_SOURCES = e_objcolor.c e_objcolor.h d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	d_ellipse.c d_ellipse.h d_line.c d_line.h d_picobj.c d_picobj.h \
 	d_regpoly.c d_regpoly.h d_spline.c d_spline.h d_subspline.c \
 	d_subspline.h d_text.c d_text.h dirstruct.h e_addpt.c e_addpt.h \
@@ -75,7 +75,7 @@ xfig_SOURCES = d_arcbox.c d_arcbox.h d_arc.c d_arc.h d_box.c d_box.h \
 	w_print.h w_rottext.c w_rottext.h w_rulers.c w_rulers.h w_setup.c \
 	w_setup.h w_snap.c w_snap.h w_srchrepl.c w_srchrepl.h w_style.c \
 	w_style.h w_util.c w_util.h w_zoom.c w_zoom.h splash.xbm version.xbm \
-	xfig_math.h
+	xfig_math.h 
 	
 
 if HAVE_JPEG
