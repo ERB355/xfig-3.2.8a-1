@@ -69,7 +69,7 @@
 // #taskQuickColoring_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Include the objcolor header file.
-
+#include "e_objcolor.h" 
 //----------------------------------- Code ends Here ------------------------------------
 
 /* EXPORTS */
@@ -127,7 +127,7 @@ static void stub_tangent_selected(void);
 // #taskQuickColoring_Icon
 //----------------------------------- Code Starts Here ----------------------------------
 // GOAL: Call the objcolor function and pass in void as the argument.
-
+static void stub_objcolor_selected(void);
 //----------------------------------- Code ends Here ------------------------------------
 
 /**************	    local variables and routines   **************/
@@ -298,6 +298,9 @@ mode_sw_info mode_switches[] = {
 	{&areameas_ic, F_AREAMEAS, areameas_selected, M_AREAMEAS_OBJECT, I_MIN2,
 	 "Measure AREA of polygons, arcs and ellipses   (Ctrl-m)",
 	 False, NULL, (Pixmap)0, (Pixmap)0},
+	 {&objcolor_ic, F_OBJCOLOR, objcolor_selected, M_ALL, I_OBJCOLOR,
+	 "Change color of objects",
+	 False, NULL, (Pixmap)0, (Pixmap)0},
 
 	/* This must be last for create_mode_panel() (in w_canvas.c) */
 	{NULL, 0, NULL, 0, 0, "", False, NULL, 0, 0}
@@ -386,7 +389,7 @@ static XtActionsRec mode_actions[] =
 		//----------------------------------- Code Starts Here ----------------------------------
 		/* GOAL: Here, you'll be adding the action of objcolor when it is selected. Use
 		 *   ModeObjcolor and the objcolor keyword.      									   */
-
+		{"ModeObjcolor", (XtActionProc)stub_objcolor_selected}
 		//----------------------------------- Code ends Here ------------------------------------
 };
 
@@ -1028,5 +1031,9 @@ stub_areameas_selected(void)
 //----------------------------------- Code Starts Here ----------------------------------
 /* GOAL: Here,  you'll  be  calling the  function  when the  quick color changing tool is
  *   selected. Pass in void as the argument and change the mode to the objcolor tool.  */
-
+static void 
+stub_objcolor_selected(void)
+{
+	change_mode(&objcolor_ic);
+}
 //----------------------------------- Code ends Here ------------------------------------
