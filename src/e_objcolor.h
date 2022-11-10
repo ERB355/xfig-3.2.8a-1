@@ -1,0 +1,12 @@
+extern static void init_color_object(F_line *p, int type, int x, int y, int px, int py);
+extern static void init_color_border(F_line *p, int type, int x, int y, int px, int py);
+extern void color_ellipse_border(F_ellipse *ellipse);
+extern void color_ellipse(F_ellipse *ellipse);
+extern void color_arc(F_arc *arc);
+extern void color_arc_border(F_arc *arc);
+extern void color_line(F_line *line);
+extern void color_line_border(F_line *line);
+extern void color_spline(F_spline *spline);
+extern void color_spline_border(F_spline *spline);
+extern void change_fillstyle(void *object);
+extern void objcolor_selected(void);
