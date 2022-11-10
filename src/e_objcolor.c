@@ -119,93 +119,103 @@ void objcolor_selected(void)
  *   3) Reset the cursor.                                                               */
 static void init_color_object(F_line *p, int type, int x, int y, int px, int py){
 switch(type){
-    case 1:
-    System.out.print("Break compound before coloring objects");
+    case O_COMPOUND:
+    put_msg("Break compound before coloring objects");
     break;
-    case 2:
+    case O_POLYLINE:
     set_temp_cursor(wait_cursor);
-    L = *copy_line(F_line *p);
-    color_line(*L);
-    change_line(*p, *L);
-    redisplay_lines(*p,*L);
-    redisplay_line(*L);
-    System.out.print("The line has been updated");
+    cur_l = (O_POLYLINE) p;
+    new_l = copy_line(cur_l);
+    color_line(new_l);
+    change_line(cur_l, new_l);
+    redisplay_lines(cur_l, new_l);
+    redisplay_line(new_l);
+    put_msg("The line has been updated");
+    reset_cursor;
     break;
-    case 3:
+    case O_ELLIPSE:
     set_temp_cursor(wait_cursor);
-    F_ellipse p2 = (F_ellipse) *p;
-    *E = *copy_ellipse(p2);
-    color_ellipse(*E);
-    change_ellipse(*p2, *E);
-    redisplay_ellipses(*p2, *E);
-    resdiplay_ellipse(*E);
+    cur_e = (O_ELLIPSE) *p;
+    new_e = copy_ellipse(cur_e);
+    color_ellipse(new_e);
+    change_ellipse(cur_e, new_e);
+    redisplay_ellipses(cur_e, new_e);
+    resdiplay_ellipse(new_e);
     System.out.print("The ellipse has been updated");
+    reset_cursor;
     break;
-    case 4:
+    case O_ARC:
     set_temp_cursor(wait_cursor);
-    F_arc p2 = (F_arc) *p;
-    *A = *copy_arc(p2);
-    color_arc(*A);
-    change_arc(*p2, *A);
-    redisplay_arcs(*p2, *A);
-    resdiplay_arc(*A);
+    cur_a = (O_ARC) *p;
+    new_a = *copy_arc(cur_a);
+    color_arc(new_a);
+    change_arc(cur_a, new_a);
+    redisplay_arcs(cur_a, new_a);
+    resdiplay_arc(new_a);
     System.out.print("The arc has been updated");
+    reset_cursor;
     break; 
-    case 5:
+    case O_SPLINE:
     set_temp_cursor(wait_cursor);
-    F_spline p2 = (F_spline) *p;
-    *S = *copy_spline(p2);
-    color_spline(*S);
-    change_spline(*p2, *S);
-    redisplay_splinees(*p2, *S);
-    resdiplay_spline(*S);
+    cur_s = (O_SPLINE) *p;
+    new_s = *copy_spline(cur_s);
+    color_spline(new_s);
+    change_spline(cur_s, new_s);
+    redisplay_splines(cur_s, new_s);
+    resdiplay_spline(new_s);
     System.out.print("The spline has been updated");
+    reset_cursor;
     break;
 }
 }
 static void init_color_border(F_line *p, int type, int x, int y, int px, int py){
 switch(type){
-    case 1:
+    case O_COMPOUND:
     System.out.print("Break compound before coloring objects");
     break;
-    case 2:
+    case O_POLYLINE:
     set_temp_cursor(wait_cursor);
-    L = *copy_line(F_line *p);
-    color_line_border(*L);
-    change_line(*p, *L);
-    redisplay_lines(*p,*L);
-    redisplay_line(*L);
-    System.out.print("The line has been updated");
+    cur_l = p;
+    new_l = *copy_line(cur_l));
+    color_line_border(new_l);
+    change_line(cur_l, new_l);
+    redisplay_lines(cur_l,new_l);
+    redisplay_line(new_l);
+    System.out.print("The line border has been updated");
+    reset_cursor;
     break;
-    case 3:
+    case O_ELLIPSE:
     set_temp_cursor(wait_cursor);
-    F_ellipse p2 = (F_ellipse) *p;
-    *E = *copy_ellipse(p2);
-    color_ellipse_border(*E);
-    change_ellipse(*p2, *E);
-    redisplay_ellipses(*p2, *E);
-    resdiplay_ellipse(*E);
-    System.out.print("The ellipse has been updated");
+    cur_e = (O_ELLIPSE)) *p;
+    new_e = *copy_ellipse(cur_e);
+    color_ellipse_border(cur_e);
+    change_ellipse(cur_e, new_e);
+    redisplay_ellipses(cur_e, new_e);
+    resdiplay_ellipse(cur_e);
+    System.out.print("The ellipse border has been updated");
+    reset_cursor;
     break;
-    case 4:
+    case O_ARC:
     set_temp_cursor(wait_cursor);
-    F_arc p2 = (F_arc) *p;
-    *A = *copy_arc(p2);
-    color_arc_border(*A);
-    change_arc(*p2, *A);
-    redisplay_arcs(*p2, *A);
-    resdiplay_arc(*A);
-    System.out.print("The arc has been updated");
+    cur_a = (O_ARC) p;
+    new_a = *copy_arc(cur_a);
+    color_arc_border(new_a);
+    change_arc(cur_a, new_a);
+    redisplay_arcs(cur_a, new_a);
+    resdiplay_arc(cur_a);
+    System.out.print("The arc border has been updated");
+    reset_cursor;
     break; 
-    case 5:
+    case O_SPLINE:
     set_temp_cursor(wait_cursor);
-    F_spline p2 = (F_spline) *p;
-    *S = *copy_spline(p2);
-    color_spline_border(*S);
-    change_spline(*p2, *S);
-    redisplay_splinees(*p2, *S);
-    resdiplay_spline(*S);
-    System.out.print("The spline has been updated");
+    cur_s = (O_SPLINE) p;
+    new_s = *copy_spline(cur_s);
+    color_spline_border(new_s);
+    change_spline(cur_s, new_s);
+    redisplay_splinees(cur_s, new_s);
+    resdiplay_spline(new_s));
+    System.out.print("The spline border has been updated");
+    reset_cursor;
     break;
 }
  
